@@ -1,11 +1,12 @@
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 
 part 'counter_state.dart';
 
 class CounterCubit extends Cubit<CounterState> {
   CounterCubit()
       : super(
-          CounterState(counterValue: 0, wasIncremented: false),
+          CounterState(counterValue: 0),
         );
 
   void increment() => emit(
