@@ -10,8 +10,7 @@ void main() {
     late CounterCubit counterCubit;
 
     setUp(() {
-      counterCubit = CounterCubit(
-          internetCubit: InternetCubit(connectivity: Connectivity()));
+      counterCubit = CounterCubit();
     });
 
     tearDown(() {
@@ -19,8 +18,7 @@ void main() {
     });
 
     test('The initial state for the CounterState(counterValue:0)', () {
-      expect(counterCubit.state,
-          CounterState(counterValue: 0, wasIncremented: false));
+      expect(counterCubit.state, CounterState(counterValue: 0));
     });
 
     blocTest(
