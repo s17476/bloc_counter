@@ -1,5 +1,7 @@
-import 'package:bloc_counter/cubit/counter_cubit.dart';
+import 'package:bloc_counter/logic/cubit/counter_cubit.dart';
+import 'package:bloc_counter/logic/cubit/internet_cubit.dart';
 import 'package:bloc_test/bloc_test.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
@@ -8,7 +10,8 @@ void main() {
     late CounterCubit counterCubit;
 
     setUp(() {
-      counterCubit = CounterCubit();
+      counterCubit = CounterCubit(
+          internetCubit: InternetCubit(connectivity: Connectivity()));
     });
 
     tearDown(() {
@@ -16,7 +19,8 @@ void main() {
     });
 
     test('The initial state for the CounterState(counterValue:0)', () {
-      expect(counterCubit.state, CounterState(counterValue: 0));
+      expect(counterCubit.state,
+          CounterState(counterValue: 0, wasIncremented: false));
     });
 
     blocTest(

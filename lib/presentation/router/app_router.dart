@@ -1,4 +1,3 @@
-import 'package:bloc_counter/logic/cubit/counter_cubit.dart';
 import 'package:bloc_counter/presentation/screens/home_screen.dart';
 import 'package:bloc_counter/presentation/screens/second_screen.dart';
 import 'package:bloc_counter/presentation/screens/third_screen.dart';
