@@ -2,6 +2,7 @@ import 'package:bloc_counter/constants/enums.dart';
 import 'package:bloc_counter/logic/cubit/counter_cubit.dart';
 import 'package:bloc_counter/logic/cubit/internet_cubit.dart';
 import 'package:bloc_counter/presentation/screens/second_screen.dart';
+import 'package:bloc_counter/presentation/screens/settings_screen.dart';
 import 'package:bloc_counter/presentation/screens/third_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,6 +25,14 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(SettingsScreen.routeName);
+            },
+            icon: const Icon(Icons.settings),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
